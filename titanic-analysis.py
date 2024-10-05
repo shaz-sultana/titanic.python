@@ -10,7 +10,7 @@ print(df.head())
 
 # Data Cleaning
 # Check for missing values
-print("\nMissing values in each column:")
+print("Missing values in each column:")
 print(df.isnull().sum())
 
 # Drop rows with missing values in 'Age' and 'Embarked' columns
@@ -23,14 +23,14 @@ print(df_cleaned.isnull().sum())
 # Analyze Metrics
 # Total number of passengers
 total_passengers = df_cleaned.shape[0]
-print(f"\nTotal number of passengers: {total_passengers}")
+print("Total number of passengers: {total_passengers}")
 
 # Percentage of survivors
 total_survivors = df_cleaned['Survived'].sum()
 percentage_survivors = (total_survivors / total_passengers) * 100
-print(f"Percentage of survivors: {percentage_survivors:.2f}%")
+print("Percentage of survivors: {percentage_survivors:.2f}%")
 
 # Average fare by survival status
 average_fare = df_cleaned.groupby('Survived')['Fare'].mean()
-print("\nAverage fare by survival status:")
+print("Average fare by survival status:")
 print(average_fare)
